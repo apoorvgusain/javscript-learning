@@ -11,6 +11,14 @@ let name = "hitesh"
 let age = 18
 let isLoggedIn = false
 let state;
+const id = Symbol('123')
+const anotherId = Symbol('123')
+
+console.log(id === anotherId);//false
+
+console.log(typeof anotherId);//symbol
+const bigNumber = 3456543576654356754n
+console.log(bigNumber)
 
 // number => 2 to power 53
 // bigint => This data type can represent numbers greater than 253-1 which helps to perform operations on large numbers,writing ‘n’ at the end of the value
@@ -21,7 +29,24 @@ let state;
 // symbol =>  used to create objects which will always be unique. these objects can be created using Symbol constructor.
 
 
-// Non-Primitive: object & arrays
 
+
+
+
+
+
+
+// Non-Primitive:  Array, Objects, Functions
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object
+
+
+const heros = ["shaktiman", "naagraj", "doga"];
+let myObj = {
+    name: "hitesh",
+    age: 22,
+}
+
+const myFunction = function(){
+    console.log("Hello world");
+}
