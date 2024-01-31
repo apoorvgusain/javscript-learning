@@ -50,3 +50,22 @@ let myObj = {
 const myFunction = function(){
     console.log("Hello world");
 }
+console.log(typeof myFunction);//object but we call obect function
+/********************************************************************** */
+/* Stack(Primitive) and Heap Non-Primitive
+Memory defined in Stack creates a copy,whereas when defined in heap it give reference of original value . 
+*/
+let petName = "ram kumar"
+let nickName = petName// copy of the petname shared, original is unaffected
+nickName = "raju"
+console.log(petName)//ram kumar
+console.log(nickName)// raju
+let userOne={
+    email:"test@mail.com",
+    upi:"test@upi"
+}
+
+let userTwo=userOne// here the reference is shared so any changes made will be affected in the original
+userTwo.email="test@yahoo.com"
+console.log(userOne.email)//test@yahoo.com
+console.log(userTwo.email)//test@yahoo.com
