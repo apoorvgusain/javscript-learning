@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+const parent = document.querySelector(".parent")
+console.log(parent)
+console.log(parent.children)
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //      console.log(parent.children[i].innerHTML);
+        
+    // }
+for (child of parent.children){
+    console.log(child.innerHTML)
+
+}
+console.log(parent.firstElementChild)// gives first child of element
+console.log(parent.lastElementChild)// gives first child of element
+parent.children[1].style.color = "orange"
+const dayOne = document.querySelector('.day')
+    console.log(dayOne);// monday div
+    console.log(dayOne.parentElement);// give parent all the elements
+    console.log(dayOne.nextElementSibling);// tuesday div
+    console.log("Nodes",parent.childNodes)// it a complete structure wher even a line break or space is consider as part of nodes 
+
+
+</script>
+</html>
