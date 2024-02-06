@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images" style="list-style: none;">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+  //all events are run in sequentially. exception are browser events which is based on the activities like mouseHover etc.
+//attachEvent(): use for internet explorer
+// jquery-on
+
+//   document.getElementById("owl").onclick = function(){
+//     alert("owl clicked")
+//   }
+document.getElementById('images').addEventListener('click',function(e){
+    console.log("owl clicked inside the ul");
+},false);//default is false
+ 
+document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+        e.stopPropagation()
+    }, )
+// output will be owlclicked then inside ul runs, because the image clicked then ul event got triggered, this is call event bubbling up(inner element,li,ul) inside to outside event trigger 
+//event propogation when set true then it will event triggers from top to bottom this is called capturing
+// to prevent from event bubling we y e.stopPropagation(), use 
+
+//Event list topic
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+
+</script>
+</html>
