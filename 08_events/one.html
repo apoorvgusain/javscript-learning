@@ -37,14 +37,30 @@ document.getElementById('owl').addEventListener('click', function(e){
 // output will be owlclicked then inside ul runs, because the image clicked then ul event got triggered, this is call event bubbling up(inner element,li,ul) inside to outside event trigger 
 //event propogation when set true then it will event triggers from top to bottom this is called capturing
 // to prevent from event bubling we y e.stopPropagation(), use 
-
+ document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation()
+        console.log("google clicked");
+    }, false)
+   
 //Event list topic
     // type, timestamp, defaultPrevented
     // target, toElement, srcElement, currentTarget,
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
-
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    
+        
+    })
+    
+    //removeIt.parentNode.removeChild(removeIt)
 
 </script>
 </html>
