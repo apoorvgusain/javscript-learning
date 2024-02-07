@@ -51,12 +51,12 @@ document.getElementById('owl').addEventListener('click', function(e){
 
     document.querySelector('#images').addEventListener('click', function(e){
         console.log(e.target.tagName);
-        if (e.target.tagName === 'IMG') {
+        if (e.target.tagName === 'IMG') {// to prevent remove we specify that we need only image tag
             console.log(e.target.id);
-            let removeIt = e.target.parentNode
-            removeIt.remove()
+            let removeIt = e.target.parentNode//li
+            removeIt.remove()// removes the li
         }
-    
+   // removeIt.parentNode.removeChild(removeIt)//li>parent(ul)>child(same li)
         
     })
     

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <p>This is not going to change if you click stop</p>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setTimeout() setInterval() clearTimeout() clearInterval()
+    setTimeout(()=>{
+        console.log("Apoorv")
+    },2000)
+    function refFn(){
+        console.log("Function called using refernce of the function")
+    }
+    setTimeout(refFn,3000)
+    
+    function changeText(){
+        document.querySelector("h1").innerText= "Welcome to Async Project"
+
+    }
+    setTimeout(changeText,4000)
+    function changeParaText(){
+        document.querySelector("p").innerText= "Para text is change"
+
+    }
+    const stopChangeText = setTimeout(changeParaText,4000)
+   // clearTimeout(stopChangeText)// stops the change
+    document.getElementById("stop").addEventListener('click',()=>{
+        clearTimeout(stopChangeText)// stops the change
+        
+    })
+
+</script>
+</html>
