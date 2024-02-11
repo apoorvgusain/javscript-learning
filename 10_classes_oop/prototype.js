@@ -1,9 +1,8 @@
-// let myName = "hitesh     "
-// let mychannel = "chai     "
-
-// console.log(myName.trueLength);
-
-
+ let myName = "hitesh     "
+let mychannel = "chai     "
+console.log(myName.length)
+// console.log(myName.trueLength);// not exist 
+ console.log(mychannel.trim().length)// 
 let myHeros = ["thor", "spiderman"]
 
 
@@ -16,26 +15,25 @@ let heroPower = {
     }
 }
 
-Object.prototype.hitesh = function(){
-    console.log(`hitesh is present in all objects`);
+Object.prototype.apoorv = function(){
+    console.log("Apoorv Is Strongest of all")
+}// prottype function was created at the parent level i.e object so all its child: function,array,string  will also have . 
+heroPower.apoorv()
+myHeros.apoorv()
+
+Array.prototype.getStrongestHero = ()=>{
+    console.log("Strongest hero is Apoorv")
 }
 
-Array.prototype.heyHitesh = function(){
-    console.log(`Hitesh says hello`);
-}
+myHeros.getStrongestHero()
+//heroPower.getStrongestHero()// it will not run because it does not have the function declared to it only its child Array will have access to it
 
-// heroPower.hitesh()
-// myHeros.hitesh()
-// myHeros.heyHitesh()
-// heroPower.heyHitesh()
 
-// inheritance
-
+//inheritance
 const User = {
     name: "chai",
     email: "chai@google.com"
 }
-
 const Teacher = {
     makeVideo: true
 }
@@ -53,15 +51,17 @@ const TASupport = {
 Teacher.__proto__ = User
 
 // modern syntax
-Object.setPrototypeOf(TeachingSupport, Teacher)
+/*
+The object to change its prototype.
+Sets the prototype of a specified object o to object proto or null. Returns the object o. */
+Object.setPrototypeOf(TeachingSupport,Teacher)
 
-let anotherUsername = "ChaiAurCode     "
-
-String.prototype.trueLength = function(){
+let newName= "gusain         "
+String.prototype.trueLength= function(){
     console.log(`${this}`);
-    console.log(`True length is: ${this.trim().length}`);
+    // console.log(`${this.name}`);
+     console.log(`${this.trim().length}`)
+    
 }
-
-anotherUsername.trueLength()
-"hitesh".trueLength()
-"iceTea".trueLength()
+newName.trueLength()
+"spider    ".trueLength()
